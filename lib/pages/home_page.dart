@@ -13,111 +13,148 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue.shade800,
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Colors.grey,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Colors.grey,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Colors.grey,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Colors.grey,
+            ),
+            label: '',
+          ),
+        ],
+      ),
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(25.0),
-          child: Column(
-            children: [
-              // header
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
+          children: [
+            // header
+            Padding(
+              padding: const EdgeInsets.only(top: 25, left: 25, right: 25),
+              child: Column(
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        'Olá, Tiago',
-                        style: TextStyle(
-                          fontSize: 24,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Olá, Tiago',
+                            style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            '23 Jan, 2023',
+                            style: TextStyle(
+                              color: Colors.blue.shade200,
+                            ),
+                          ),
+                        ],
                       ),
-                      const SizedBox(height: 8),
-                      Text(
-                        '23 Jan, 2023',
-                        style: TextStyle(
-                          color: Colors.blue.shade200,
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.blue.shade500,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Icon(
+                          Icons.notifications,
+                          color: Colors.white,
                         ),
                       ),
                     ],
                   ),
+                  const SizedBox(height: 20),
+                  // Search
                   Container(
-                    padding: const EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.blue.shade500,
+                      color: Colors.blue.shade600,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: const Icon(
-                      Icons.notifications,
-                      color: Colors.white,
+                    child: Row(
+                      children: const [
+                        Icon(
+                          Icons.search,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: 8),
+                        Text(
+                          'Buscar',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
-              const SizedBox(height: 20),
-              // Search
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade600,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Row(
-                  children: const [
-                    Icon(
-                      Icons.search,
-                      color: Colors.white,
-                    ),
-                    SizedBox(width: 8),
-                    Text(
-                      'Buscar',
-                      style: TextStyle(
+                  const SizedBox(height: 20),
+                  //Como voce se sente?
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      Text(
+                        'Como você se sente?',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Icon(
+                        Icons.more_horiz,
                         color: Colors.white,
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 20),
-              //Como voce se sente?
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
-                  Text(
-                    'Como você se sente?',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    ],
                   ),
-                  Icon(
-                    Icons.more_horiz,
-                    color: Colors.white,
+                  const SizedBox(height: 18),
+                  // 4 diferents faces
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: const [
+                      EmoticonFace(emoticonFace: '🤔', feel: 'Triste'),
+                      EmoticonFace(emoticonFace: '😁', feel: 'Agradável'),
+                      EmoticonFace(emoticonFace: '😉', feel: 'Bem'),
+                      EmoticonFace(emoticonFace: '😄', feel: 'Excelente'),
+                    ],
                   ),
                 ],
               ),
-              const SizedBox(height: 18),
-              // 4 diferents faces
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  EmoticonFace(emoticonFace: '🤔', feel: 'Triste'),
-                  EmoticonFace(emoticonFace: '😁', feel: 'Agradável'),
-                  EmoticonFace(emoticonFace: '😉', feel: 'Bem'),
-                  EmoticonFace(emoticonFace: '😄', feel: 'Excelente'),
-                ],
+            ),
+            const SizedBox(height: 25),
+            //content
+            Expanded(
+              child: Container(
+                color: Colors.white,
               ),
-
-              Expanded(
-                child: Container(
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
