@@ -151,7 +151,61 @@ class _HomePageState extends State<HomePage> {
             //content
             Expanded(
               child: Container(
-                color: Colors.white,
+                padding: const EdgeInsets.all(25),
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 175, 204, 231),
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  ),
+                ),
+                child: Center(
+                  child: Column(
+                    children: [
+                      //head exercicios
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text(
+                              'Exercicios',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
+                            ),
+                            Icon(Icons.more_horiz),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 25),
+                      //lista de exercicios
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        child: ListTile(
+                          leading: Container(
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Colors.orange,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Icon(
+                              Icons.favorite,
+                              color: Colors.red.shade500,
+                            ),
+                          ),
+                          title: Text('Habilidades de Fala'),
+                          subtitle: Text('15 Exercicios'),
+                          trailing: Icon(Icons.more_horiz),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ],
