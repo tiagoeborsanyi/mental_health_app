@@ -25,21 +25,14 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home,
+              Icons.message,
               color: Colors.grey,
             ),
             label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home,
-              color: Colors.grey,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
+              Icons.person,
               color: Colors.grey,
             ),
             label: '',
