@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mental_health_app/util/emoticon_face.dart';
+import 'package:mental_health_app/util/exercise_title.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -151,7 +152,7 @@ class _HomePageState extends State<HomePage> {
             //content
             Expanded(
               child: Container(
-                padding: const EdgeInsets.all(25),
+                padding: const EdgeInsets.only(top: 25, left: 25, right: 25),
                 decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 175, 204, 231),
                   borderRadius: BorderRadius.only(
@@ -181,26 +182,16 @@ class _HomePageState extends State<HomePage> {
                       ),
                       const SizedBox(height: 25),
                       //lista de exercicios
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: ListTile(
-                          leading: Container(
-                            padding: const EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              color: Colors.orange,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Icon(
-                              Icons.favorite,
-                              color: Colors.red.shade500,
-                            ),
-                          ),
-                          title: Text('Habilidades de Fala'),
-                          subtitle: Text('15 Exercicios'),
-                          trailing: Icon(Icons.more_horiz),
+                      Expanded(
+                        child: ListView(
+                          children: [
+                            ExerciseTile(),
+                            ExerciseTile(),
+                            ExerciseTile(),
+                            ExerciseTile(),
+                            ExerciseTile(),
+                            ExerciseTile(),
+                          ],
                         ),
                       ),
                     ],
