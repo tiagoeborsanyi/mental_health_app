@@ -184,13 +184,37 @@ class _HomePageState extends State<HomePage> {
                       //lista de exercicios
                       Expanded(
                         child: ListView(
-                          children: [
-                            ExerciseTile(),
-                            ExerciseTile(),
-                            ExerciseTile(),
-                            ExerciseTile(),
-                            ExerciseTile(),
-                            ExerciseTile(),
+                          children: const [
+                            ExerciseTile(
+                              icon: Icons.favorite,
+                              color: Colors.orange,
+                              title: 'Habilidades de Fala',
+                            ),
+                            ExerciseTile(
+                              icon: Icons.person,
+                              color: Colors.green,
+                              title: 'Habiblidade de Leitura',
+                            ),
+                            ExerciseTile(
+                              icon: Icons.star,
+                              color: Colors.pink,
+                              title: 'Habilidade de Escrita',
+                            ),
+                            ExerciseTile(
+                              icon: Icons.favorite,
+                              color: Colors.orange,
+                              title: 'Habilidades de Fala',
+                            ),
+                            ExerciseTile(
+                              icon: Icons.person,
+                              color: Colors.green,
+                              title: 'Habiblidade de Leitura',
+                            ),
+                            ExerciseTile(
+                              icon: Icons.star,
+                              color: Colors.pink,
+                              title: 'Habilidade de Escrita',
+                            ),
                           ],
                         ),
                       ),

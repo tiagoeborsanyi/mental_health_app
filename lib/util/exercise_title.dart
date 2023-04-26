@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
 class ExerciseTile extends StatelessWidget {
-  const ExerciseTile({Key? key}) : super(key: key);
+  final IconData icon;
+  final Color color;
+  final String title;
+
+  const ExerciseTile({
+    Key? key,
+    required this.icon,
+    required this.color,
+    required this.title,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +24,15 @@ class ExerciseTile extends StatelessWidget {
         leading: Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: Colors.orange,
+            color: color,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Icon(
-            Icons.favorite,
-            color: Colors.red.shade500,
+            icon,
+            color: Colors.white,
           ),
         ),
-        title: Text('Habilidades de Fala'),
+        title: Text(title),
         subtitle: Text('15 Exercicios'),
         trailing: Icon(Icons.more_horiz),
       ),
